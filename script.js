@@ -2,10 +2,11 @@ window.addEventListener('load',nowdateTime)
 function nowdateTime(){
     var date = new Date();    
     var daynumber = date.getDate();
+    var daynumber = daynumber < 10 ? '0'+ daynumber : daynumber;
     var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var month = month[date.getUTCMonth()];
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var days = days[date.getDay()];
+    var daysName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var daysName = daysName[date.getDay()];
     var hour = date.getHours();
     var hour = hour < 10 ? '0'+ hour : hour;
     var minute = date.getMinutes();
@@ -15,7 +16,7 @@ function nowdateTime(){
     var ampm = hour >= 12 ? 'PM' : 'AM';
 
 document.getElementById("month").innerHTML= month;
-document.getElementById("dayName").innerHTML= days;
+document.getElementById("dayName").innerHTML= daysName;
 document.getElementById("day").innerHTML= daynumber;
 document.getElementById("hour").innerHTML= hour;
 document.getElementById("minute").innerHTML= minute;
